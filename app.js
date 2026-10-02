@@ -6,7 +6,7 @@ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const date=x=>{if(!x)return 'Awaiting bill';const [m,d,y]=x.split('/');return new Date(Number(y)<100?2000+Number(y):Number(y),Number(m)-1,Number(d)).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});};
 function normalize(u){return u.rows.map(r=>({raw:r,start:r[0],end:r[1],amount:number(r[u.headers.findIndex(h=>h==='Total Rent'||h==='Total Bill')]),usage:number(r[u.headers.findIndex(h=>h==='kwH Use'||h==='Total Therms')]),paid:Object.fromEntries(names.map(n=>[n,String(r[u.headers.indexOf(n+' Paid')]??'').trim().toLowerCase()]))}));}
 const MOVE_IN=Date.UTC(2026,7,17);
-const deposit={total:3000,paid:{Camden:null,Jason:1000,Alex:null}};
+const deposit={total:3000,paid:{Camden:1000,Jason:1000,Alex:1000}};
 function utcDay(value){const [m,d,y]=value.split('/').map(Number);return Date.UTC(y<100?2000+y:y,m-1,d);}
 function shares(row,key){if(row.amount===null)return Object.fromEntries(names.map(n=>[n,0]));
  const start=utcDay(row.start);
@@ -19,7 +19,7 @@ function shares(row,key){if(row.amount===null)return Object.fromEntries(names.ma
  const alex=row.amount*after/days/3,other=(row.amount-alex)/2;
  return {Camden:other,Jason:other,Alex:alex};
 }
-function depositPanel(){return `<section class="panel"><div class="section-head"><h2>Security deposit</h2><span>One-time · separate from utility bills</span></div><section class="metrics four">${card('Total deposit',money(deposit.total),'Shared equally by all three','purple')}${names.map((n,i)=>card(n+' deposit share',money(1000),deposit.paid[n]===null?'Payment status not recorded':'Paid · '+money(deposit.paid[n]),['pink','blue','orange'][i])).join('')}</section><p class="footnote">Jason’s combined first-rent and deposit payment covers his $1,000 deposit share. Camden and Alex’s deposit payment statuses are not recorded.</p></section>`;}
+function depositPanel(){return `<section class="panel"><div class="section-head"><h2>Security deposit</h2><span>One-time · refundable · separate from utility bills</span></div><section class="metrics four">${card('Total deposit',money(deposit.total),'Shared equally by all three','purple')}${names.map((n,i)=>card(n+' deposit share',money(1000),deposit.paid[n]===null?'Payment status not recorded':'Paid · '+money(deposit.paid[n]),['pink','blue','orange'][i])).join('')}</section><p class="footnote">All three $1,000 shares are paid. This refundable deposit is held separately from utility costs. No refund has been recorded.</p></section>`;}
 function summary(rows,key){const bills=rows.filter(r=>r.amount!==null);const total=bills.reduce((s,r)=>s+r.amount,0);const paid=Object.fromEntries(names.map(n=>[n,bills.reduce((s,r)=>s+(r.paid[n]==='yes'?shares(r,key)[n]:0),0)]));const owed=Object.fromEntries(names.map(n=>[n,bills.reduce((sum,r)=>sum+shares(r,key)[n],0)]));return {bills,total,paid,owed,collected:Object.values(paid).reduce((a,b)=>a+b,0),usage:bills.reduce((s,r)=>s+(r.usage??0),0)};}
 const badge=(v,pending=false)=>pending?'<span class="badge pending">Awaiting bill</span>':v==='yes'?'<span class="badge paid">✓ Paid</span>':v==='no'?'<span class="badge unpaid">Unpaid</span>':'<span class="badge pending">Not recorded</span>';
 function card(label,value,note,color='white'){return `<article class="metric ${color}"><span class="eyebrow">${label}</span><strong>${value}</strong><span class="note">${note}</span></article>`;}
