@@ -33,3 +33,7 @@
 @media(max-width:767px){.person-total-row{gap:6px}.person-status{font-size:14px;padding:5px 7px}.person-total-row .person-total{font-size:28px}.balance-item,.balance-total{gap:7px;font-size:14px}}
 
 .trend-scroll{overflow-x:auto;scrollbar-width:thin}.bill-trend{display:block;width:100%;min-width:440px;height:auto;font-family:'Nunito Sans',Arial,sans-serif}@media(max-width:767px){.bill-trend{min-width:460px}.trend-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}}
+
+.metrics.card-row{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:16px;scroll-snap-type:x proximity;padding:2px 6px 12px 2px;margin-bottom:0;scrollbar-width:thin}.metrics.card-row>.metric{flex:1 0 185px;scroll-snap-align:start;min-width:0}.person-totals-panel .card-row>.metric{flex:1 0 220px}.utility-totals-panel .section-head,.person-totals-panel .section-head{margin-bottom:14px}@media(max-width:767px){.metrics.card-row{gap:12px}.metrics.card-row>.metric,.person-totals-panel .card-row>.metric{flex:0 0 170px}}
+
+.utility-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:20px;padding:2px 6px 12px 2px;scroll-snap-type:x proximity;scrollbar-width:thin}.utility-grid>.utility-card{flex:1 0 205px;scroll-snap-align:start}.metrics.four{display:flex;flex-wrap:nowrap;overflow-x:auto;padding:2px 6px 12px 2px;scrollbar-width:thin}.metrics.four>.metric{flex:1 0 220px;min-width:0}@media(max-width:767px){.utility-grid{gap:12px}.utility-grid>.utility-card{flex:0 0 175px}.metrics.four>.metric{flex:0 0 170px}}
