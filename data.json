@@ -1,0 +1,152 @@
+{
+  "updated": "2026-10-02",
+  "source": "https://docs.google.com/spreadsheets/d/11hf12fRWlNTAq9Z96ln1Z1SedxDRXab-RjD74mT3Ouk/edit",
+  "utilities": {
+    "Rent": {
+      "headers": [
+        "Start Date",
+        "End Date",
+        "Total Rent",
+        "Jason Paid",
+        "Alex Paid",
+        "Camden Paid"
+      ],
+      "rows": [
+        [
+          "7/17/2026",
+          "8/16/26",
+          "$3,000.00",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "8/17/2026",
+          "9/16/26",
+          "$3,000.00",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "9/17/2026",
+          "10/16/26",
+          "$3,000.00",
+          "yes",
+          "yes",
+          "yes"
+        ]
+      ]
+    },
+    "Electric": {
+      "headers": [
+        "Start Date",
+        "End Date",
+        "kwH Use",
+        "Total Bill",
+        "Jason Paid",
+        "Alex Paid",
+        "Camden Paid"
+      ],
+      "rows": [
+        [
+          "7/17/2026",
+          "7/27/26",
+          "227",
+          "65.66",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "7/27/2026",
+          "8/25/26",
+          "724",
+          "209.09",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "8/25/2026",
+          "9/24/26",
+          "386",
+          "119.86",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "9/24/2026"
+        ]
+      ]
+    },
+    "Gas": {
+      "headers": [
+        "Start Date",
+        "End Date",
+        "Total Bill",
+        "Total Therms",
+        "Jason Paid",
+        "Alex Paid",
+        "Camden Paid"
+      ],
+      "rows": [
+        [
+          "7/22/2026",
+          "8/5/26",
+          "$19.22",
+          "9.252",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "8/6/2026",
+          "9/3/26",
+          "$32.63",
+          "14.406",
+          "yes",
+          "yes",
+          "yes"
+        ]
+      ]
+    },
+    "Wifi": {
+      "headers": [
+        "Start Date",
+        "End Date",
+        "Total Bill",
+        "Jason Paid",
+        "Alex Paid",
+        "Camden Paid"
+      ],
+      "rows": [
+        [
+          "7/12/2026",
+          "8/12/26",
+          "$60",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "8/12/2026",
+          "9/12/26",
+          "$60",
+          "yes",
+          "yes",
+          "yes"
+        ],
+        [
+          "9/12/2026",
+          "10/12/26",
+          "$60",
+          "no",
+          "no",
+          "no"
+        ]
+      ]
+    }
+  }
+}
