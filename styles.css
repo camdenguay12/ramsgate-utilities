@@ -61,3 +61,40 @@
  .people .person>span{grid-column:2;grid-row:2;text-align:right;font-size:11px;margin-top:3px}
  .people .person-breakdown,.people .person-footer{display:none}
 }
+
+/* Phone layouts fit the viewport instead of using swipe rows. */
+@media(max-width:767px){
+ .metrics,.metrics.four,.metrics.card-row,.utility-grid,.calendar-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible;
+  scroll-snap-type:none;gap:12px;padding:2px 4px 6px 0;min-width:0;max-width:100%;
+ }
+ .metrics>.metric,.metrics.four>.metric,.metrics.card-row>.metric,
+ .person-totals-panel .card-row>.metric,.utility-grid>.utility-card,.calendar-grid>article{
+  min-width:0;max-width:100%;width:auto;flex:auto;overflow-wrap:anywhere;
+ }
+ .metric{min-height:0;padding:12px}
+ .metric strong{font-size:clamp(21px,6vw,27px);overflow-wrap:anywhere}
+ .metric .eyebrow,.metric .note{font-size:13px}
+ .person-totals-panel .metrics.card-row{grid-template-columns:minmax(0,1fr)}
+ .person-totals-panel .metric{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;align-items:center}
+ .person-totals-panel .metric .eyebrow{margin:0}
+ .person-totals-panel .metric .note{grid-column:1 / -1}
+ .utility-top{flex-wrap:wrap;gap:5px}
+ .utility-top h3{font-size:21px;overflow-wrap:anywhere}
+ .utility-card>strong{font-size:clamp(21px,6vw,27px)}
+ .utility-card .badge{max-width:100%;white-space:normal;font-size:12px}
+ .calendar-grid>article{padding-left:10px}
+ .calendar-day{font-size:24px;max-width:100%}
+ .trend-scroll{overflow:visible;width:100%;min-width:0}
+ .bill-trend{width:100%;min-width:0;max-width:100%;height:auto}
+ .two-column,.two-column>.panel,.panel,.page-head>div{min-width:0}
+ .nav-links{display:flex;flex-wrap:wrap;overflow:visible;gap:5px}
+ .nav-links a{padding:7px 10px}
+ .people .person-total-row{min-width:0}
+ .people .balance-dropdown[open]{flex-basis:100%;width:100%}
+ .people .balance-list{padding:8px}
+ .people .balance-item{flex-wrap:wrap;gap:4px}
+}
+@media(max-width:359px){
+ .metrics,.metrics.four,.metrics.card-row,.utility-grid,.calendar-grid{grid-template-columns:minmax(0,1fr)}
+}
