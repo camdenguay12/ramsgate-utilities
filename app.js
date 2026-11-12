@@ -1,5 +1,5 @@
 const names=['Camden','Jason','Alex'];
-const configs={Rent:{label:'Rent',color:'purple',icon:'⌂',cycle:'17th',cycleNote:'Monthly cycle starts on the 17th.'},Electric:{label:'Electric',color:'yellow',icon:'ϟ',cycle:'Varies',cycleNote:'Billing dates vary by period.'},Gas:{label:'Gas',color:'teal',icon:'♨',cycle:'Varies',cycleNote:'Billing dates vary by period.'},Wifi:{label:'WiFi',color:'lime',icon:'≋',cycle:'12th',cycleNote:'Monthly cycle starts on the 12th.'}};
+const configs={Rent:{label:'Rent',color:'purple',icon:'⌂',cycle:'17th',cycleNote:'Monthly cycle starts on the 17th.'},Electric:{label:'Electric',color:'yellow',icon:'ϟ',cycle:'23rd–27th',cycleNote:'Expected monthly window, based on recorded billing periods.'},Gas:{label:'Gas',color:'teal',icon:'♨',cycle:'3rd–6th',cycleNote:'Expected monthly window, based on recorded billing periods.'},Wifi:{label:'WiFi',color:'lime',icon:'≋',cycle:'12th',cycleNote:'Monthly cycle starts on the 12th.'}};
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n);
 const number=x=>x===undefined||x===''?null:Number(String(x).replace(/[$,]/g,''));
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
