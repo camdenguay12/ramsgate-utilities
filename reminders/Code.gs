@@ -41,6 +41,7 @@ function parseRamsgateDate(value) {
   return Date.UTC(Number(match[1]),Number(match[2]),Number(match[3]));
 }
 function ramsgateShare(bill,name) {
+  if(bill.key==='Rent'&&bill.start>=Date.UTC(2026,7,1)&&bill.start<Date.UTC(2026,8,1))return name==='Alex'?1000:850;
   if(bill.key==='Rent')return bill.start<RAMSGATE_MOVE_IN?(name==='Alex'?0:bill.amount/2):bill.amount/3;
   if(bill.start>=RAMSGATE_MOVE_IN)return bill.amount/3;
   const duration=bill.end-bill.start;
