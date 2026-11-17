@@ -98,3 +98,30 @@
 @media(max-width:359px){
  .metrics,.metrics.four,.metrics.card-row,.utility-grid,.calendar-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+/* Homepage uses full-width rows on every screen. */
+.home-people,.home-utilities{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:28px;border:2px solid var(--ink);border-radius:14px;overflow:hidden}
+.roommate-row{padding:14px 18px;min-width:0;border-bottom:1px solid #20233f50}
+.roommate-row:last-child,.home-utility-row:last-child{border-bottom:0}
+.roommate-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.person-name{font:600 25px 'Fredoka',sans-serif;background:none;color:inherit;border:0;padding:8px 0;cursor:pointer;text-align:left}
+.person-name:focus-visible{outline:3px solid #6144e6;outline-offset:3px}
+.person-name[aria-expanded="true"]>span{display:inline-block;transform:rotate(180deg)}
+.amount-due{text-align:right}.amount-due strong{display:block;font-size:30px;font-weight:900}.amount-due small{display:block;font-size:12px}
+.roommate-row>.person-status,.roommate-row>.balance-dropdown{margin-top:8px}
+.roommate-row .balance-dropdown{width:100%}
+.paid-history{border-top:1px solid #20233f50;margin-top:14px;padding-top:12px}
+.paid-history h3{font-family:'Fredoka',sans-serif;margin:0}.paid-history .footnote{margin:5px 0 12px}
+.history-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:10px 0;border-bottom:1px solid #20233f30;font-size:14px}
+.history-row>div{min-width:0}.history-row>div:last-child{text-align:right}.history-row small{display:block;font-size:12px;margin-top:4px;line-height:1.5}.history-row b{white-space:nowrap}
+.home-utility-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:15px 18px;border-bottom:1px solid #20233f50;text-decoration:none}
+.home-utility-row>strong{font-family:'Fredoka',sans-serif;font-size:22px}.home-utility-row>span{font-size:14px}
+.home-calendar{margin-bottom:28px}.calendar-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #d5d8e4;gap:12px}
+.calendar-row>span{padding:6px 12px;border-radius:7px;font-weight:900}
+@media(max-width:767px){
+ .roommate-row{padding:10px 12px}.person-name{font-size:23px}.amount-due strong{font-size:27px}
+ .home-utility-row{grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:12px}
+ .home-utility-row>.badge{grid-column:1 / -1;justify-self:start;white-space:normal}
+ .home-utility-row>strong{font-size:21px}.home-utility-row>span{font-size:13px}
+ .history-row{gap:10px}.history-row>div:first-child{flex:1}.history-row>div:last-child{flex:0 0 105px}
+}
